@@ -1,0 +1,4 @@
+rootProject.name = 'bookmarks'
+include 'model'
+include 'rest'
+
