@@ -20,14 +20,14 @@ public class Bookmark {
 
     private String uri;
 
-    private String descripion;
+    private String description;
 
     private Bookmark() {}
 
     public Bookmark(final Account account, final String uri, final String description){
         this.account = account;
         this.uri = uri;
-        this.descripion = description;
+        this.description = description;
     }
 
     public Long getId() {
@@ -42,7 +42,7 @@ public class Bookmark {
         return uri;
     }
 
-    public String getDescripion() {
-        return descripion;
+    public String getDescription() {
+        return description;
     }
 }

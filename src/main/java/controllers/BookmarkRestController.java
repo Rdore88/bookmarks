@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import repositories.AccountRepository;
-import repositories.BookmarkRepository;
+import repository.AccountRepository;
+import repository.BookmarkRepository;
 
 import java.net.URI;
 import java.util.Collection;
@@ -52,16 +52,7 @@ class BookmarkRestController {
 
     }
 
-    @GetMapping("/{bookmarkId}")
-    Bookmark readBookmark(@PathVariable String userId, @PathVariable Long bookmarkId) {
-        this.validateUser(userId);
-
-        return this.bookmarkRepository.findById(bookmarkId)
-                .orElseThrow(() -> new BookmarkNotFoundException(bookmarkId));
-    }
-
     private void validateUser(String userId) {
-        this.accountRepository.findByUsername(userId).orElseThrow(
-                () -> new UserNotFoundException(userId));
+
     }
 }
