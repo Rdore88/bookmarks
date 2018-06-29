@@ -1,9 +1,9 @@
-package bookmarks;
+package com.dore;
 
-import bookmarks.models.Account;
-import bookmarks.models.Bookmark;
-import bookmarks.repository.AccountRepository;
-import bookmarks.repository.BookmarkRepository;
+import com.dore.account.daos.AccountRepository;
+import com.dore.account.models.Account;
+import com.dore.bookmarks.daos.BookmarkRepository;
+import com.dore.bookmarks.models.Bookmark;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,9 +26,9 @@ public class Application {
                 .forEach(
                         a -> {
                             Account account = accountRepository.save(new Account(a,
-                                    "password"));
+                                                                                 "password"));
                             bookmarkRepository.save(new Bookmark(account,
-                                    "http://bookmark.com/1/" + a, "A description"));
+                                                                 "http://bookmark.com/1/" + a, "A description"));
                             bookmarkRepository.save(new Bookmark(account,
                                     "http://bookmark.com/2/" + a, "A description"));
                         });
