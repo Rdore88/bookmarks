@@ -1,5 +1,6 @@
-package bookmarks.models;
+package com.dore.account.models;
 
+import com.dore.bookmarks.models.Bookmark;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Entity;

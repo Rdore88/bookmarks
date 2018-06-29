@@ -1,10 +1,11 @@
-package bookmarks.models;
+package com.dore.bookmarks.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.dore.account.models.Account;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity

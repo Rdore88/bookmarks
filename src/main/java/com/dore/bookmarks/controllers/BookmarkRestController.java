@@ -1,12 +1,12 @@
-package bookmarks.controllers;
+package com.dore.bookmarks.controllers;
 
-import bookmarks.models.Bookmark;
+import com.dore.account.daos.AccountRepository;
+import com.dore.bookmarks.daos.BookmarkRepository;
+import com.dore.bookmarks.models.Bookmark;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import bookmarks.repository.AccountRepository;
-import bookmarks.repository.BookmarkRepository;
 
 import java.net.URI;
 import java.util.Collection;
