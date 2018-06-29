@@ -1,14 +1,13 @@
-package application;
+package bookmarks;
 
-import models.Account;
-import models.Bookmark;
+import bookmarks.models.Account;
+import bookmarks.models.Bookmark;
+import bookmarks.repository.AccountRepository;
+import bookmarks.repository.BookmarkRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import repository.AccountRepository;
-import repository.BookmarkRepository;
-
 
 import java.util.Arrays;
 
