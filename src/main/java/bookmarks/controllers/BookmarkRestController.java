@@ -1,5 +1,7 @@
 package bookmarks.controllers;
 
+import bookmarks.errors.BookmarkNotFoundException;
+import bookmarks.errors.UserNotFoundException;
 import bookmarks.models.Bookmark;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +54,16 @@ class BookmarkRestController {
 
     }
 
-    private void validateUser(String userId) {
+    @GetMapping("/{bookmarkId}")
+    Bookmark readBookmark(@PathVariable String userId, @PathVariable Long bookmarkId) {
+        this.validateUser(userId);
 
+        return this.bookmarkRepository.findById(bookmarkId)
+                .orElseThrow(() -> new BookmarkNotFoundException(bookmarkId));
+    }
+
+    private void validateUser(String userId) {
+        this.accountRepository.findByUsername(userId).orElseThrow(
+                () -> new UserNotFoundException(userId));
     }
 }
